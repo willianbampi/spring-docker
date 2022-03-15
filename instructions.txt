@@ -1,0 +1,26 @@
+create application build on terminal with:
+./mvnw clean package -> poweshell
+mvnw clean package -> cmd
+
+the step above is only necessary if the dockerfile does not have the build process by mvn
+
+create docker image on terminal with:
+docker build -t docker_user_account/application_name .
+
+list docker images on terminal with:
+docker images
+
+create doker container on terminal with:
+docker run --name application_name_container -p 8081:8080 docker_user_account/application_name
+
+consume the application on port 8081
+
+list containers that are running on terminal with:
+docker ps
+
+stop a container on terminal with:
+docker stop application_name_container
+
+send the image to docker hub on terminal with:
+docker login
+docker push docker_user_account/application_name
